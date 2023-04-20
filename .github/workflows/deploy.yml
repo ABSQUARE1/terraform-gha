@@ -41,10 +41,10 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
+      - run: aws sts get-caller-identity
       - name: Terraform init
         run: terraform init 
         working-directory: ./infra
-      - run: aws sts get-caller-identity
       - name: Terraform plan
         working-directory: ./infra
         run: |
