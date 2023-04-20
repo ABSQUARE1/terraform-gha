@@ -43,7 +43,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
       - run: aws sts get-caller-identity
       - name: Terraform init
-        run: terraform init 
+        run: terraform init -backend-config="bucket=buck-ter"
         working-directory: ./infra
       - name: Terraform plan
         working-directory: ./infra
