@@ -42,7 +42,6 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
       - name: Terraform init
-        env: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
         run: terraform init 
         working-directory: ./infra
       - name: Terraform plan
